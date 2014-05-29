@@ -13,7 +13,7 @@ set nocompatible               " be iMproved
  " original repos on github
  Bundle 'tpope/vim-fugitive'
  Bundle 'Lokaltog/vim-easymotion'
- "Bundle 'tpope/vim-rails'
+ Bundle 'tpope/vim-rails'
  Bundle 'kien/ctrlp.vim'
  Bundle 'scrooloose/nerdtree'
  Bundle 'altercation/vim-colors-solarized' 
@@ -34,6 +34,13 @@ set nocompatible               " be iMproved
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
  "
+ "
+ 
+ augroup vimrcEx
+   autocmd!
+   " For all text files set 'textwidth' to 78 characters.
+   autocmd FileType text setlocal textwidth=78
+ augroup END
  
  " The Silver Searcher
  if executable('ag')
@@ -78,3 +85,22 @@ set nocompatible               " be iMproved
  map <Leader>l :call RunLastSpec()<CR>
  map <Leader>a :call RunAllSpecs()<CR>
  let g:rspec_command = "!bundle exec rspec {spec}"
+
+ "Easy change between panes
+ nnoremap <C-J> <C-W><C-J>
+ nnoremap <C-K> <C-W><C-K>
+ nnoremap <C-L> <C-W><C-L>
+ nnoremap <C-H> <C-W><C-H>
+
+ "Split panes below and to the right
+ set splitbelow
+ set splitright
+
+ " Display extra whitespace
+ set list listchars=tab:»·,trail:·
+
+ " Make vim faster
+ set ttyfast
+ set synmaxcol=128
+ set ttyscroll=3
+ set lazyredraw
