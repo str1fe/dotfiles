@@ -111,4 +111,4 @@ set nocompatible               " be iMproved
  " Paste text
  nnoremap <F2> :set invpaste paste?<CR>
  set pastetoggle=<F2>
- set showmodge
+ set showmode
