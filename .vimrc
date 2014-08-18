@@ -61,7 +61,7 @@ set nocompatible               " be iMproved
  set expandtab
  set shiftwidth=2
  set softtabstop=2
- set number
+ "set number
  set hlsearch
  set nobackup
  set noswapfile
@@ -71,7 +71,7 @@ set nocompatible               " be iMproved
  syntax enable
  filetype plugin indent on
  set background=dark
- colorscheme solarized
+ "colorscheme solarized
  se t_Co=16
 
  filetype plugin indent on
@@ -101,6 +101,8 @@ set nocompatible               " be iMproved
 
  " Make vim faster
  set ttyfast
- set synmaxcol=128
+ set synmaxcol=300
  set ttyscroll=3
  set lazyredraw
+
+ set rnu
