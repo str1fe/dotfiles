@@ -20,6 +20,9 @@ set nocompatible               " be iMproved
  Bundle 'kchmck/vim-coffee-script'
  Bundle 'nathanaelkane/vim-indent-guides'
  Bundle 'thoughtbot/vim-rspec'
+ Bundle 'nanotech/jellybeans.vim'
+ Bundle 'digitaltoad/vim-jade.git'
+ Bundle 'itchyny/lightline.vim'
 
  " non github repos
  Bundle 'git://git.wincent.com/command-t.git'
@@ -113,3 +116,14 @@ set nocompatible               " be iMproved
  set showmode
 
 map <F4> :NERDTreeToggle<CR>
+
+colorscheme default
+
+" For lightlime status bar:
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"⭤":""}',
+      \ }
+      \ }
