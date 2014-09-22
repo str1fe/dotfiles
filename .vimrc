@@ -127,3 +127,6 @@ let g:lightline = {
       \   'readonly': '%{&readonly?"⭤":""}',
       \ }
       \ }
+
+" Hightlight hamlc
+au BufNewFile,BufRead *.hamlc setf haml
