@@ -1,4 +1,4 @@
 # dotfiles
 
-git submodule init
-git submodule update
+- git submodule init
+- git submodule update
