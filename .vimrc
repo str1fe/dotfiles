@@ -74,10 +74,9 @@ set nocompatible               " be iMproved
  syntax enable
  filetype plugin indent on
  set background=dark
- "colorscheme solarized
  se t_Co=16
 
- filetype plugin indent on
+ "filetype plugin indent on
 
  " Ignore the following in searches
  set wildignore+=**/log/**
@@ -117,7 +116,7 @@ set nocompatible               " be iMproved
 
 map <F4> :NERDTreeToggle<CR>
 
-colorscheme default
+colorscheme jellybeans
 
 " For lightlime status bar:
 set laststatus=2
