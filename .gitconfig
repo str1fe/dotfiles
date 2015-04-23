@@ -46,3 +46,7 @@
 	ch = checkout
 	p = pull
 	r = remote
+	bcleanup = "!git branch --merged | grep -v 'master' | grep -v 'develop' | grep -v '*' | xargs -n 1 git branch -d "
+	freshness = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
+[heroku]
+	account = work
