@@ -35,7 +35,7 @@
 	name = Pål Andre Sundt
 	email = pal@rubynor.com
 [core]
-	excludesfile = /home/strife/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
 [alias]
 	s = status
