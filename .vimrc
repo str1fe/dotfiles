@@ -23,6 +23,7 @@ set nocompatible               " be iMproved
  Bundle 'nanotech/jellybeans.vim'
  Bundle 'digitaltoad/vim-jade.git'
  Bundle 'itchyny/lightline.vim'
+ Bundle 'elzr/vim-json'
 
  " non github repos
  Bundle 'git://git.wincent.com/command-t.git'
@@ -114,7 +115,7 @@ set nocompatible               " be iMproved
  set pastetoggle=<F2>
  set showmode
 
-map <F4> :NERDTreeToggle<CR>
+map <TAB> :NERDTreeToggle<CR>
 
 colorscheme jellybeans
 
