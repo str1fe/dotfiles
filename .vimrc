@@ -25,6 +25,9 @@ set nocompatible               " be iMproved
  Bundle 'itchyny/lightline.vim'
  Bundle 'elzr/vim-json'
  Bundle 'ngmy/vim-rubocop'
+ Bundle 'slim-template/vim-slim.git'
+ Bundle 'isRuslan/vim-es6'
+ Bundle 'scrooloose/syntastic'
 
  " non github repos
  Bundle 'git://git.wincent.com/command-t.git'
@@ -131,3 +134,16 @@ let g:lightline = {
 
 " Hightlight hamlc
 au BufNewFile,BufRead *.hamlc setf haml
+
+
+"SYNTASTIC
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
