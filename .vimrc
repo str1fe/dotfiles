@@ -27,7 +27,12 @@ set nocompatible               " be iMproved
  Bundle 'ngmy/vim-rubocop'
  Bundle 'slim-template/vim-slim.git'
  Bundle 'isRuslan/vim-es6'
+ Bundle 'lambdatoast/elm.vim'
+ Bundle 'w0ng/vim-hybrid'
+ Bundle 'dylanaraps/wal'
  Bundle 'scrooloose/syntastic'
+ Bundle 'tomlion/vim-solidity'
+ Bundle 'junegunn/seoul256.vim'
 
  " non github repos
  Bundle 'git://git.wincent.com/command-t.git'
@@ -62,6 +67,8 @@ set nocompatible               " be iMproved
    let g:ctrlp_use_caching = 0
  endif
 
+ let g:ctrlp_max_files=0
+
  " bind K to grep word under cursor
  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
@@ -73,7 +80,7 @@ set nocompatible               " be iMproved
  set hlsearch
  set nobackup
  set noswapfile
- set cursorline
+ "set cursorline
 " autocmd vimenter * NERDTree
  
  syntax enable
@@ -121,7 +128,9 @@ set nocompatible               " be iMproved
 
 map <bar> :NERDTreeToggle<CR>
 
-colorscheme jellybeans
+"let g:hybrid_custom_term_colors = 1
+"colorscheme hybrid
+colorscheme wal
 
 " For lightlime status bar:
 set laststatus=2
@@ -141,9 +150,13 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_scss_checkers = ['scss_lint']
+"let g:syntastic_solidity_checkers = ['solium', 'solc', 'solhint']
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|log\|tmp'
