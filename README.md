@@ -29,5 +29,5 @@ Search for word in file: `esc + /<word to search for`
 
 Search and replace word: `:%g/text to replace/replacement text/gc`
 
-Search for text across files: `:grep -T searchText **/**`
+Search for text across files: `:grep -R searchText **/**`
 
