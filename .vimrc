@@ -126,7 +126,9 @@ set nocompatible               " be iMproved
  set pastetoggle=<F2>
  set showmode
 
-map <bar> :NERDTreeToggle<CR>
+map <tab> :NERDTreeToggle<CR>
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "let g:hybrid_custom_term_colors = 1
 "colorscheme hybrid
@@ -160,3 +162,8 @@ let g:syntastic_scss_checkers = ['scss_lint']
 "let g:syntastic_solidity_checkers = ['solium', 'solc', 'solhint']
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|log\|tmp'
+
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
