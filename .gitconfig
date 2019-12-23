@@ -50,3 +50,5 @@
 	freshness = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
 [heroku]
 	account = work
+[push]
+	default = matching
