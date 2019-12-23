@@ -167,3 +167,6 @@ noremap <Leader>y "*y
 noremap <Leader>p "*p
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
+
+let g:ctrlp_user_command =  
+  \ ['.git', 'cd %s && git ls-files -co --exclude-standard'] 
