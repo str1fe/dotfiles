@@ -1,53 +1,36 @@
 set nocompatible               " be iMproved
  filetype off                   " required!
 
- set rtp+=~/.vim/bundle/vundle/
+ set rtp+=~/.config/nvim/bundle/Vundle.vim/
  call vundle#rc()
 
- " let Vundle manage Vundle
- " required!
- Bundle 'gmarik/vundle'
+ call plug#begin()
 
- " My Bundles here:
- "
- " original repos on github
- Bundle 'tpope/vim-fugitive'
- Bundle 'Lokaltog/vim-easymotion'
- Bundle 'tpope/vim-rails'
- Bundle 'kien/ctrlp.vim'
- Bundle 'scrooloose/nerdtree'
- Bundle 'altercation/vim-colors-solarized' 
- Bundle 'kchmck/vim-coffee-script'
- Bundle 'nathanaelkane/vim-indent-guides'
- Bundle 'thoughtbot/vim-rspec'
- Bundle 'nanotech/jellybeans.vim'
- Bundle 'digitaltoad/vim-jade.git'
- Bundle 'itchyny/lightline.vim'
- Bundle 'elzr/vim-json'
- Bundle 'ngmy/vim-rubocop'
- Bundle 'slim-template/vim-slim.git'
- Bundle 'isRuslan/vim-es6'
- Bundle 'lambdatoast/elm.vim'
- Bundle 'w0ng/vim-hybrid'
- Bundle 'dylanaraps/wal'
- Bundle 'scrooloose/syntastic'
- Bundle 'tomlion/vim-solidity'
- Bundle 'junegunn/seoul256.vim'
+ Plug 'tpope/vim-fugitive'
+ Plug 'Lokaltog/vim-easymotion'
+ Plug 'tpope/vim-rails'
+ Plug 'kien/ctrlp.vim'
+ Plug 'scrooloose/nerdtree'
+ Plug 'altercation/vim-colors-solarized' 
+ Plug 'kchmck/vim-coffee-script'
+ Plug 'nathanaelkane/vim-indent-guides'
+ Plug 'thoughtbot/vim-rspec'
+ Plug 'nanotech/jellybeans.vim'
+ Plug 'itchyny/lightline.vim'
+ Plug 'elzr/vim-json'
+ Plug 'ngmy/vim-rubocop'
+ Plug 'isRuslan/vim-es6'
+ Plug 'andys8/vim-elm-syntax'
+ Plug 'w0ng/vim-hybrid'
+ Plug 'dylanaraps/wal'
+ Plug 'scrooloose/syntastic'
+ Plug 'tomlion/vim-solidity'
+ Plug 'junegunn/seoul256.vim'
+ Plug 'slim-template/vim-slim'
 
- " non github repos
- Bundle 'git://git.wincent.com/command-t.git'
- " ...
- "
- " Brief help
- " :BundleList          - list configured bundles
- " :BundleInstall(!)    - install(update) bundles
- " :BundleSearch(!) foo - search(or refresh cache first) for foo
- " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
- "
- " see :h vundle for more details or wiki for FAQ
- " NOTE: comments after Bundle command are not allowed..
- "
- "
+ " Use :PlugInstall
+ call plug#end()
+
  
  augroup vimrcEx
    autocmd!
@@ -116,7 +99,6 @@ set nocompatible               " be iMproved
  " Make vim faster
  set ttyfast
  set synmaxcol=300
- set ttyscroll=3
  set lazyredraw
 
  set rnu
@@ -126,13 +108,15 @@ set nocompatible               " be iMproved
  set pastetoggle=<F2>
  set showmode
 
-map <tab> :NERDTreeToggle<CR>
+map <F1> :NERDTreeToggle<CR>
+let g:NERDTreeMinimalMenu=1
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowHidden=1
 
 "let g:hybrid_custom_term_colors = 1
 "colorscheme hybrid
-colorscheme wal
+colorscheme jellybeans
 
 " For lightlime status bar:
 set laststatus=2
@@ -152,10 +136,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_scss_checkers = ['scss_lint']
