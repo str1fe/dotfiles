@@ -31,3 +31,10 @@ Search and replace word: `:%g/text to replace/replacement text/gc`
 
 Search for text across files: `:grep -R searchText **/**`
 
+## Nvim
+
+### Install packer:
+
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
