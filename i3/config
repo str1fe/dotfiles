@@ -33,7 +33,7 @@ bindsym $mod+Return exec $HOME/.config/i3/i3_shell.sh
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -lines 8 -columns 3 -eh 2 -width 74 -padding 200 -opacity "40"
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
