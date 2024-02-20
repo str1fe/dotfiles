@@ -51,4 +51,4 @@
 [heroku]
 	account = work
 [push]
-	default = current
+	default = simple
