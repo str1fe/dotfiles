@@ -79,49 +79,10 @@ vim.keymap.set("n", "<leader>tt", function() ui.nav_file(4) end)
 --
 
 
-
 -- Rspec
 vim.keymap.set("n", "<leader>t", ":call RunCurrentSpecFile()<CR>")
 vim.g.rspec_command = "!bundle exec rspec {spec}"
 --
--- LSP
---vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
 
--- Import lsp-zero
-local lsp = require('lsp-zero')
-
--- Configure lsp-zero with default settings
-lsp.preset('recommended')
-lsp.nvim_workspace()
-
--- Set up autocompletion
-lsp.setup_nvim_cmp({
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    { name = 'path' }
-  }
-})
-
--- Setup Solargraph
-lsp.ensure_installed({'solargraph'})
-
--- Additional LSP server configurations can go here
-lsp.configure('solargraph', {
-  settings = {
-    solargraph = {
-      diagnostics = true
-    }
-  }
-})
-
--- Activate configurations
-lsp.on_attach(function(client, bufnr)
-  -- Example of setting keymaps for LSP functions
-  local opts = {noremap = true, silent = true}
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  -- Add more keymaps as needed
-end)
-
--- Initialize lsp-zero
-lsp.setup()
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
