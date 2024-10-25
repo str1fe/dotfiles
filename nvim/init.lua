@@ -55,6 +55,15 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<C-m>", ":NERDTreeToggle<CR>")
 
 
+-- Make quickfix file navigation work
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "quickfix",
+  callback = function()
+    vim.api.nvim_buf_set_keymap(0, "n", "<CR>", "<CR>", { noremap = true, silent = true })
+  end,
+})
+
+
 
 -- Telescope
 local builtin = require('telescope.builtin')
